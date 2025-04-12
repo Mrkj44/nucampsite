@@ -50,7 +50,7 @@ const RenderCampsite = (props) => {
     if (campsite) {
         return (
             <Animatable.View 
-                animation='fadeInDown'
+                animation='fadeInDownBig'
                 duration={2000}
                 delay={1000}
                 ref={view}
