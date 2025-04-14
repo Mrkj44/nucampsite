@@ -47,8 +47,8 @@ const RenderCampsite = (props) => {
             props.onShowModal();
         }
 }});
-    if (campsite) {
-        const shareCampsite = (title, message, url) => {
+
+const shareCampsite = (title, message, url) => {
             Share.share(
                 {
                     title,
@@ -60,6 +60,8 @@ const RenderCampsite = (props) => {
                 }
             );
         }
+
+    if (campsite) { 
         return (
             <Animatable.View 
                 animation='fadeInDownBig'
