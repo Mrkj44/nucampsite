@@ -236,7 +236,14 @@ const Main = () => {
     }, [dispatch]);
 
     useEffect(() => {
-        showNetInfo();      
+        showNetInfo();  
+        const unsubscribeNetInfo = NetInfo.addEventListener(
+                    (connectionInfo) => {
+                        handleConnectivityChange(connectionInfo);
+                   }
+                
+                );
+                return unsubscribeNetInfo;    
     }, []);
 
     const handleConnectivityChange = (connectionInfo) => {
@@ -272,13 +279,7 @@ const Main = () => {
                                 connectionInfo.type,
                             ToastAndroid.LONG
                         );
-                const unsubscribeNetInfo = NetInfo.addEventListener(
-                    (connectionInfo) => {
-                        handleConnectivityChange(connectionInfo);
-                   }
                 
-                );
-                return unsubscribeNetInfo;
     }
 
                   
